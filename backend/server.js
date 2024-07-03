@@ -14,17 +14,13 @@ const port = process.env.PORT || 4000;
 
 // middleware 
 app.use(express.json())
-app.use(cors({
-    origin:["https://deploy-mern-1whq.vercel.app"],
-    methods:["POST","GET"],
-    credentials:true
-}));
+app.use(cors());
 
 //db connection
 
 connectDB();
 
-mongoose.connect('mongodb+srv://praneetha:Praneetha@9396@cluster0.ts76nd2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+
 
 // api endpoints
 app.use("/api/food",foodRouter)
